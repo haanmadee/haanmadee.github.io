@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show More - Modul TikTok Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            100: '#e7e7e7',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                        },
+                        surface: '#121212',
+                        surface2: '#1a1a1a',
+                        line: '#262626'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b; /* zinc-950 */
+        }
+        /* Memaksa tampilan mobile persis seperti home page */
+        .mobile-container {
+            width: 100%;
+            max-width: 480px; 
+            margin: 0 auto;
+            background-color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px;
+            box-shadow: 0 0 40px rgba(255,255,255,0.02);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Efek blur shadow untuk foto mentor menyatu ke background */
+        .mask-gradient-left {
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+            mask-image: linear-gradient(to right, transparent 0%, black 45%);
+        }
+    </style>
+</head>
+<body class="text-brand-100 antialiased relative">
+
+    <main class="mobile-container pb-12">
+
+        <header class="py-4 px-5 border-b border-line bg-black/80 backdrop-blur-md sticky top-0 z-50 flex items-center gap-3">
+            <a href="javascript:history.back()" class="w-8 h-8 flex items-center justify-center bg-surface border border-line rounded-full hover:bg-zinc-800 transition-colors">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </a>
+            <div>
+                <h1 class="text-[12px] font-bold text-white tracking-widest uppercase">Fase 1 - Fondasi</h1>
+            </div>
+        </header>
+
+        <section class="relative w-full h-[280px] bg-surface border-b border-line flex items-center overflow-hidden">
+            <div class="relative z-20 w-[65%] pl-5 pr-2 flex flex-col justify-center h-full">
+                <div class="w-7 h-7 mb-3 bg-zinc-900 rounded-md flex items-center justify-center border border-zinc-700">
+                    <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok" class="w-4 h-4 object-contain">
+                </div>
+                <h2 class="text-[20px] font-black text-white leading-tight mb-2">Bongkar Rahasia Algoritma.</h2>
+                <p class="text-[10px] text-zinc-400 leading-relaxed font-medium pr-2">
+                    Berhenti tebak-tebakan. Pahami ekosistemnya, kuasai algoritmanya, dan jadikan tokomu mesin e-commerce yang solid.
+                </p>
+            </div>
+            
+            <div class="absolute right-0 top-0 bottom-0 w-[55%] h-full z-10">
+                <img src="https://image2url.com/r2/default/images/1775356473841-0438bdbd-2767-44a7-b366-2c0beb0f02ad.png" 
+                     alt="Mentor" 
+                     class="w-full h-full object-cover mask-gradient-left opacity-90 grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+        </section>
+
+        <section class="px-5 py-8 text-center">
+            <p class="text-[12px] text-brand-300 leading-relaxed mb-4">
+                Sering banget kejadian.. asal buka toko, <i>upload</i> video, lalu berharap langsung viral. Ujung-ujungnya orderan sepi, viewers mentok, atau performa toko malah nyungsep tanpa alasan yang jelas.
+            </p>
+            <p class="text-[12px] text-white font-medium leading-relaxed mb-4">
+                Kenapa bisa gitu? Karena TikTok itu bukan sekadar platform hiburan. Ini mesin e-commerce yang jalan pakai data dan algoritma.
+            </p>
+            <p class="text-[12px] text-brand-300 leading-relaxed">
+                Sebelum bakar uang buat iklan atau bayar kreator, fondasi jualanmu harus kuat dulu. Kalau asal jualan tanpa strategi, konten viral ribuan views pun belum tentu jadi closing. Di 4 modul ini, kita bakal beresin fondasinya biar tokomu beneran siap tempur.
+            </p>
+        </section>
+
+        <section class="px-4 pb-8 space-y-4">
+            
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900">
+                    <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                        <span class="text-zinc-500">01.</span> Sistem Kerja & Algoritma
+                    </h3>
+                    <p class="text-[10px] text-zinc-400 mt-1">Biar nggak salah langkah dari awal berjualan.</p>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Apa itu TikTok Shop & tren ekosistem video commerce saat ini.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara kerja algoritma TikTok untuk *seller* (ACE Framework).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Perbandingan jualan di TikTok vs Shopee 
+                                <img src="https://cdn.simpleicons.org/shopee/FFFFFF" class="inline w-3 h-3 ml-1 opacity-50" alt="shopee">
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Bedah *case study* brand lokal yang sukses meledak pakai Kalodata.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900">
+                    <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                        <span class="text-zinc-500">02.</span> Riset Niche & Produk
+                    </h3>
+                    <p class="text-[10px] text-zinc-400 mt-1">Cara menemukan produk yang gampang *sold out*.</p>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Teknik analisis pasar dan membaca tren produk yang lagi naik.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Bongkar rahasia riset pakai TikTok Creative Center & Kalodata.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Ciri-ciri mutlak produk yang gampang dibikin viral.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>*Action Plan*: Praktik langsung menyusun *shortlist* 3 produk potensial.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900">
+                    <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                        <span class="text-zinc-500">03.</span> Set Up Toko dari Nol
+                    </h3>
+                    <p class="text-[10px] text-zinc-400 mt-1">Optimasi fundamental toko biar konversi maksimal.</p>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Langkah teknis pendaftaran *seller* tanpa ribet.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Trik meracik nama toko yang punya nilai jual tinggi.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Pengaturan wajib (alamat, setup ekspedisi, kategori).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Pengaturan lanjutan rahasia untuk nge-dongkrak omset di bulan pertama.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900">
+                    <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                        <span class="text-zinc-500">04.</span> Optimasi Kartu Produk
+                    </h3>
+                    <p class="text-[10px] text-zinc-400 mt-1">Bikin pembeli nggak mikir dua kali buat *checkout*.</p>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara kerja algoritma khusus kartu produk di sistem TikTok.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Teknik SEO: Bikin judul yang langsung nyangkut di pencarian.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Format *copywriting* deskripsi produk yang menghipnotis.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Formula visual/foto produk yang terbukti ningkatin *Click-Through Rate*.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="px-4 pb-10 pt-2 border-t border-line">
+            
+            <div class="text-center mb-6 pt-4">
+                <h3 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1">Investasi Terbaik</h3>
+                <h2 class="text-[16px] font-bold text-white leading-tight">Pilih Akses Belajarmu</h2>
+            </div>
+
+            <div class="bg-zinc-200 text-zinc-950 rounded-[18px] p-5 mb-6 text-center border border-zinc-300 shadow-[0_10px_20px_rgba(255,255,255,0.05)] relative overflow-hidden">
+                <div class="absolute top-3 right-[-30px] bg-zinc-950 text-white text-[7px] font-black px-10 py-1 uppercase tracking-widest rotate-45">Best Deal</div>
+                
+                <h2 class="text-[16px] font-black tracking-tight mb-1 uppercase">Akses Semua Modul</h2>
+                <p class="text-[10px] font-bold text-zinc-600 mb-3">Fase 1 (Modul 1 - 4) + Eksklusif Grup WA</p>
+                <div class="text-[22px] font-black mb-4 tracking-tight">Rp 500.000</div>
+                
+                <a href="http://lynk.id/gocbd/vg0zp0e4rx8z/checkout" target="_blank" rel="noopener noreferrer" class="block w-full bg-zinc-950 text-white font-bold text-[11px] py-3 rounded-full hover:bg-zinc-800 transition-colors tracking-widest uppercase shadow-md">
+                    Ambil Paket Lengkap
+                </a>
+                <p class="text-[8px] text-zinc-500 mt-2 font-medium">*Sekali bayar, akses materi selamanya.</p>
+            </div>
+
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-px bg-line flex-1"></div>
+                <span class="text-[10px] text-zinc-500 font-medium uppercase tracking-widest">Atau Beli Satuan</span>
+                <div class="h-px bg-line flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 1</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Sistem Kerja & Fondasi Algoritma.</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/r3zdgzy85wwo/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 1</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 2</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Trik Riset Produk Potensial & Viral.</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/xql75lmw6w63/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 2</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 3</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Setup & Optimasi Fundamental Toko.</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/y67mq7mp17x6/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 3</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 4</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">SEO & Optimasi Konversi Kartu Produk.</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/x94eg4k9dm4j/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 4</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4 bg-surface rounded-[14px] p-3 border border-zinc-700 hover:border-zinc-500 transition-colors relative overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.05)] group">
+                <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-100 to-zinc-500"></div>
+                <div class="absolute -right-10 -top-10 w-24 h-24 bg-white/5 rounded-full blur-xl group-hover:bg-white/10 transition-colors pointer-events-none"></div>
+
+                <div class="flex items-center justify-between pl-3 relative z-10">
+                    <div class="flex-1 pr-2">
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-0.5">Paket 4 Modul +<br>1 Day Company Training</h3>
+                        <p class="text-zinc-400 text-[8px] leading-tight mt-1">Bedah toko & strategi in-house.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <div class="text-white font-black text-[14px] mb-1.5">Rp 7.500.000</div>
+                        <a href="http://lynk.id/gocbd/xw4ld4kvmdx0/checkout" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-1.5 bg-white text-zinc-950 text-[9px] font-bold rounded-full hover:bg-zinc-200 transition-colors shadow-md">Daftar Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

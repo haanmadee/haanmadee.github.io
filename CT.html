@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Day Company Training - CBD Mentorship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        surface: '#000000', 
+                        surface2: '#121212', 
+                        line: '#27272a', 
+                        brand: '#e4e4e7',
+                        discount: '#ff4444', 
+                        accent: '#16a34a', 
+                        secondarytext: '#a1a1aa'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e4e4e7;
+        }
+        .mobile-container {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px; 
+            position: relative;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Bento Box Hover & Shadow */
+        .bento-box {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-box:hover {
+            transform: translateY(-2px);
+            border-color: #52525b;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Garis Putus-putus Tiket Add-on */
+        .ticket-border {
+            background-image: linear-gradient(to bottom, #27272a 50%, transparent 50%);
+            background-size: 1px 12px;
+            background-repeat: repeat-y;
+        }
+    </style>
+</head>
+<body class="antialiased w-full relative">
+
+    <main class="mobile-container pb-16 pt-6">
+        
+        <section class="pt-8 px-5 relative z-10 grid grid-cols-12 gap-6 items-center border-b border-zinc-800 pb-10 mb-10">
+            <div class="col-span-12 relative z-20">
+                <div class="flex items-center gap-1.5 border border-zinc-800 bg-zinc-900 rounded-full px-3 py-1 mb-4">
+                    <span class="text-[9px] font-bold tracking-widest uppercase text-white">Private Offline Program</span>
+                </div>
+
+                <h1 class="text-[34px] font-black leading-[1] tracking-tighter text-white mb-2">
+                    1 DAY<br>
+                    COMPANY<br>
+                    <span class="text-zinc-600 tracking-tight">TRAINING.</span>
+                </h1>
+                
+                <p class="text-[12px] text-secondarytext font-bold tracking-wide">CBD Mentorship Program</p>
+            </div>
+        </section>
+
+        <section class="px-5 mb-10">
+            <h3 class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mb-4">Program Focus</h3>
+            
+            <div class="space-y-4 mb-8">
+                <p class="text-[13px] text-zinc-300 font-medium leading-relaxed max-w-[95%]">
+                    Program intensif <strong class="text-white font-black">1 Day Company Training</strong> dirancang khusus untuk Brand Owner dan UMKM yang lelah hanya mengejar <span class="italic">traffic</span> sesaat atau campaign viral tanpa konversi yang jelas.
+                </p>
+                <p class="text-[13px] text-zinc-300 font-medium leading-relaxed max-w-[95%]">
+                    Fokus utama kami adalah menggeser cara main bisnis Anda menjadi berbasis <strong class="text-white font-black">data, profit, dan sistem yang berkelanjutan.</strong>
+                </p>
+                <p class="text-[13px] text-zinc-400 leading-relaxed max-w-[95%]">
+                    Dalam 1 hari penuh, Rika Yeo dan Ernest Yosua akan duduk bersama tim Anda, membedah langsung anatomi toko, mencari titik kebocoran margin, dan merumuskan <span class="text-white font-medium">arahan strategis (Action Plan)</span> yang 100% relevan dengan kondisi realita bisnis Anda saat ini.
+                </p>
+            </div>
+
+            <div class="flex items-end gap-3 mb-6">
+                <div>
+                    <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Investasi Basic</p>
+                    <h2 class="text-[32px] font-black text-white leading-none">Rp 7.000.000</h2>
+                </div>
+                <div class="mb-1 text-center">
+                    <span class="inline-block bg-red-600 text-white font-bold text-[9px] px-2 py-0.5 rounded-sm mb-0.5">Diskon 2Jt</span>
+                    <p class="text-[12px] text-zinc-600 line-through decoration-zinc-600 font-medium leading-none">Rp 9.000.000</p>
+                </div>
+            </div>
+            <p class="text-[11px] text-zinc-500 leading-relaxed max-w-[90%]">Reservasi sekarang, slot sangat terbatas. Biaya basic belum termasuk akomodasi & venue (cek opsi Add-on).</p>
+        </section>
+
+        <hr class="border-zinc-800 mx-5 mb-10">
+
+        <section class="px-5 mb-12 relative z-10">
+            <div class="flex items-center justify-between mb-5">
+                <h3 class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">The Output</h3>
+                <svg class="w-4 h-4 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3.5">
+                
+                <div class="col-span-2 bento-box bg-zinc-950 border border-zinc-800 rounded-[20px] p-5 flex items-start gap-4 shadow-xl">
+                    <div class="w-10 h-10 shrink-0 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-[14px] font-bold text-white mb-1 tracking-tight">Audit Toko Total</h4>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">Analisis mendalam Shopee & TikTok Shop (+ Tokopedia) dan audit struktur biaya untuk mengidentifikasi kebocoran margin.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-zinc-950 border border-zinc-800 rounded-[20px] p-4 flex flex-col justify-between aspect-square shadow-xl relative overflow-hidden">
+                    <div class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-[12px] font-bold text-white mb-0.5">Strategi Eksklusif</h4>
+                        <p class="text-[10px] text-zinc-500 line-clamp-2">Strategi iklan, konten, dan promosi yang disesuaikan.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-zinc-950 border border-zinc-800 rounded-[20px] p-4 flex flex-col justify-between aspect-square shadow-xl relative overflow-hidden">
+                    <div class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.45m.31-.31c.02-.104.04-.208.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.433 4.433 0 002.731-2.732c.15-.327.281-.662.394-1m-1.758 4.306c-.328.15-.662.281-1 .394M15 15l-3-3m0 0l-3 3m3-3v9"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-[12px] font-bold text-white mb-0.5">Action Plan SOP</h4>
+                        <p class="text-[10px] text-zinc-500 line-clamp-2">SOP taktis dan checklist yang siap dieksekusi.</p>
+                    </div>
+                </div>
+
+                <div class="col-span-2 bento-box bg-zinc-950 border border-zinc-800 rounded-[20px] p-5 flex items-center justify-between shadow-xl overflow-hidden">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[14px] font-bold text-white mb-1 tracking-tight">Pelaku Top 1 Shopee</h4>
+                            <p class="text-[11px] text-zinc-400">Insight membangun Brand UMKM dari nol.</p>
+                        </div>
+                    </div>
+                    <div class="w-[80px] h-[40px] shrink-0 border border-zinc-800 rounded-lg bg-zinc-900 shadow-neomorphic-in p-1">
+                        <img src="https://image2url.com/r2/default/images/1775204106631-80ba2971-db83-44ee-90d6-44f12f96490e.png" alt="Growth" class="w-full h-full object-cover rounded opacity-40 grayscale">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="px-5 mb-14 relative z-10">
+            <h3 class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6">Expert Mentors</h3>
+            
+            <div class="grid grid-cols-2 gap-5">
+                
+                <div class="shadow-xl bg-zinc-950 border border-zinc-800 rounded-[20px] p-5 flex flex-col items-center text-center">
+                    <div class="w-[120px] h-[120px] rounded-full overflow-hidden border-4 border-zinc-900 shadow-2xl mb-4">
+                        <img src="https://image2url.com/r2/default/images/1775356473841-0438bdbd-2767-44a7-b366-2c0beb0f02ad.png" alt="Rika Yeo - Shopee Seller Ambassador" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-[16px] font-black text-white mb-1 tracking-tight">Ernest Yosua</h4>
+                    <p class="text-[9px] text-accent font-bold uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-sm">Tiktok Brand Ambassador</p>
+                </div>
+
+                <div class="shadow-xl bg-zinc-950 border border-zinc-800 rounded-[20px] p-5 flex flex-col items-center text-center">
+                    <div class="w-[120px] h-[120px] rounded-full overflow-hidden border-4 border-zinc-900 shadow-2xl mb-4">
+                        <img src="https://image2url.com/r2/default/images/1775361971870-fb044eab-081d-4c7b-a2c3-113e052a161f.png" alt="Ernest Yosua - TikTok Brand Ambassador" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-[16px] font-black text-white mb-1 tracking-tight">Rika Yeo</h4>
+                    <p class="text-[9px] text-accent font-bold uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-sm">Shopee Seller Ambassador</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="px-5 mb-14 relative z-10">
+            <h3 class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6">Format Pelaksanaan</h3>
+            
+            <div class="relative pl-5 border-l border-zinc-800 space-y-7">
+                
+                <div class="relative">
+                    <div class="absolute -left-[27px] top-0.5 w-3 h-3 rounded-full bg-black border-[3px] border-zinc-300"></div>
+                    <div class="flex items-start gap-3.5">
+                        <svg class="w-4 h-4 text-zinc-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>
+                        <div>
+                            <h4 class="text-[13px] font-bold text-white mb-0.5">Sesi Private Offline</h4>
+                            <p class="text-[11px] text-zinc-500 leading-relaxed max-w-[90%]">Maksimal 5 peserta (1 tim toko). Konten training disesuaikan kondisi bisnis Anda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[27px] top-0.5 w-3 h-3 rounded-full bg-black border-[3px] border-zinc-300"></div>
+                    <div class="flex items-start gap-3.5">
+                        <svg class="w-4 h-4 text-zinc-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div>
+                            <h4 class="text-[13px] font-bold text-white mb-0.5">09.00 – 17.00 WIB</h4>
+                            <p class="text-[11px] text-zinc-500">Tanggal ditentukan berdasarkan kesepakatan bersama & ketersediaan mentor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[27px] top-0.5 w-3 h-3 rounded-full bg-black border-[3px] border-zinc-300"></div>
+                    <div class="flex items-start gap-3.5">
+                        <svg class="w-4 h-4 text-zinc-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"></path></svg>
+                        <div>
+                            <h4 class="text-[13px] font-bold text-white mb-0.5">Free Support Grup WA (1 Bulan)</h4>
+                            <p class="text-[11px] text-zinc-500 leading-relaxed max-w-[90%]">Untuk diskusi lanjutan, tanya jawab, dan follow up pasca training.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="px-5 mb-16 relative z-10">
+            <h3 class="text-[12px] font-bold text-textcolor uppercase tracking-widest mb-1">Upgrade Your Session</h3>
+            <p class="text-[11px] text-secondarytext mb-5">Opsi Add-on fasilitas/materi ini dapat dipilih nanti setelah Anda mengklik tombol "Reservasi".</p>
+            
+            <div class="flex flex-col gap-3.5">
+                
+                <div class="flex bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden shadow-xl">
+                    <div class="w-1.5 bg-accent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-center gap-0.5">
+                        <span class="inline-block bg-accent/10 text-accent font-bold text-[9px] px-2 py-0.5 rounded-sm w-max">HARI EKSTRA</span>
+                        <h4 class="text-[12px] font-bold text-white">Materi Lanjutan & Praktek</h4>
+                        <p class="text-[10px] text-secondarytext leading-tight">1 hari penuh implementasi strategi taktis langsung di tempat.</p>
+                    </div>
+                    <div class="ticket-border w-[1px] h-auto my-2.5"></div>
+                    <div class="px-5 py-3 flex items-center justify-center bg-zinc-900/30 min-w-[90px] text-center">
+                        <p class="text-[11px] font-bold text-accent tracking-wide">+ 5 Jt</p>
+                    </div>
+                </div>
+
+                <div class="flex bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden shadow-xl">
+                    <div class="w-1.5 bg-brand"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-center gap-0.5">
+                        <span class="inline-block bg-white/10 text-brand font-bold text-[9px] px-2 py-0.5 rounded-sm w-max">VENUE HOTEL</span>
+                        <h4 class="text-[12px] font-bold text-white">Meeting Room Hotel *3</h4>
+                        <p class="text-[10px] text-secondarytext leading-tight">Paket lengkap termasuk lunch, 1x coffee break & seminar kit / hari.</p>
+                    </div>
+                    <div class="ticket-border w-[1px] h-auto my-2.5"></div>
+                    <div class="px-5 py-3 flex items-center justify-center bg-zinc-900/30 min-w-[90px] text-center">
+                        <p class="text-[11px] font-bold text-brand tracking-wide">+ 3 Jt</p>
+                    </div>
+                </div>
+
+                <div class="flex bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden shadow-xl">
+                    <div class="w-1.5 bg-zinc-500"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-center gap-0.5">
+                        <span class="inline-block bg-white/10 text-zinc-300 font-bold text-[9px] px-2 py-0.5 rounded-sm w-max">VENUE KAFE</span>
+                        <h4 class="text-[12px] font-bold text-white">Meeting Room Cafe/Coworking</h4>
+                        <p class="text-[10px] text-secondarytext leading-tight">Suasana santai termasuk lunch & seminar kit / hari.</p>
+                    </div>
+                    <div class="ticket-border w-[1px] h-auto my-2.5"></div>
+                    <div class="px-5 py-3 flex items-center justify-center bg-zinc-900/30 min-w-[90px] text-center">
+                        <p class="text-[11px] font-bold text-zinc-300 tracking-wide">+ 1.5 Jt</p>
+                    </div>
+                </div>
+
+                <div class="flex bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden shadow-xl opacity-70">
+                    <div class="w-1.5 bg-zinc-900"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-center gap-0.5">
+                        <h4 class="text-[12px] font-bold text-zinc-500">Basic (Tanpa Add-on Venue)</h4>
+                        <p class="text-[10px] text-zinc-600 leading-tight">Tim Anda mengatur lokasi meeting, logistik & konsumsi mandiri.</p>
+                    </div>
+                    <div class="ticket-border w-[1px] h-auto my-2.5"></div>
+                    <div class="px-5 py-3 flex items-center justify-center bg-zinc-900/30 min-w-[90px] text-center">
+                        <p class="text-[11px] font-bold text-zinc-600 tracking-wide">+ 0</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="px-5 mb-14 relative z-10">
+            <div class="border border-zinc-800 bg-zinc-900/20 rounded-[16px] p-5 shadow-2xl">
+                <div class="flex items-center gap-2.5 mb-4 border-b border-zinc-800 pb-3">
+                    <svg class="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+                    <h3 class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Catatan Penting</h3>
+                </div>
+                <ul class="text-[10px] text-secondarytext space-y-3 list-none">
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-zinc-600 mt-1">•</span>
+                        Untuk pelaksanaan training di luar Jakarta & Bandung, akan dikenakan tambahan biaya transport dan akomodasi mentor sesuai lokasi.
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-zinc-600 mt-1">•</span>
+                        Biaya investasi basic Rp 7.000.000 <strong class="text-white font-medium">tidak mencakup biaya venue</strong> (hotel/meeting room) atau konsumsi.
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-zinc-600 mt-1">•</span>
+                        Materi dan pembahasan bersifat <strong class="text-white font-medium">terpersonalisasi</strong>, disesuaikan dengan kondisi bisnis dan data toko peserta.
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-zinc-600 mt-1">•</span>
+                        Slot sangat terbatas dan bersifat <strong class="text-white font-medium">first come, first served</strong>. Tagihan akhir akan dikirimkan setelah form Reservasi divalidasi.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="px-6 pb-12 text-center relative z-20 mt-12 border-t border-zinc-800/60 pt-10">
+            
+            <div class="relative w-full max-w-[340px] mx-auto mb-8">
+                <a href="http://lynk.id/gocbd/9lv3revd1p1y/checkout" target="_blank" rel="noopener noreferrer" class="shadow-2xl relative block w-full bg-white text-zinc-950 font-black py-4 rounded-full text-[12px] tracking-widest uppercase hover:bg-zinc-200 hover:scale-[1.02] transition-all">
+                    Reservasi Jadwal & Pilih Opsi &rarr;
+                </a>
+            </div>
+
+            <p class="text-[10px] text-zinc-500 mt-5 leading-relaxed max-w-[280px] mx-auto">
+                Saat mengklik tombol di atas, Anda akan diarahkan ke form reservasi CBD Mentorship. <span class="text-zinc-400">Harga basic Rp 7.000.000 belum termasuk venue/materi ekstra.</span> Di form tersebut, Anda akan diminta <span class="text-white font-bold">memilih opsi Add-on Venue & Hari Ekstra</span> sesuai kebutuhan tim Anda sebelum tagihan akhir dikirimkan.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show More - Modul 9-12 TikTok Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            100: '#e7e7e7',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                        },
+                        surface: '#121212',
+                        surface2: '#1a1a1a',
+                        line: '#262626'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b; 
+        }
+        .mobile-container {
+            width: 100%;
+            max-width: 480px; 
+            margin: 0 auto;
+            background-color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px;
+            box-shadow: 0 0 40px rgba(255,255,255,0.02);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .mask-gradient-left {
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+            mask-image: linear-gradient(to right, transparent 0%, black 45%);
+        }
+    </style>
+</head>
+<body class="text-brand-100 antialiased relative">
+
+    <main class="mobile-container pb-12">
+
+        <header class="py-4 px-5 border-b border-line bg-black/80 backdrop-blur-md sticky top-0 z-50 flex items-center gap-3">
+            <a href="javascript:history.back()" class="w-8 h-8 flex items-center justify-center bg-surface border border-line rounded-full hover:bg-zinc-800 transition-colors">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </a>
+            <div>
+                <h1 class="text-[12px] font-bold text-white tracking-widest uppercase">Fase 3 - Skala & Profit</h1>
+            </div>
+        </header>
+
+        <section class="relative w-full h-[280px] bg-surface border-b border-line flex items-center overflow-hidden">
+            <div class="relative z-20 w-[65%] pl-5 pr-2 flex flex-col justify-center h-full">
+                <div class="w-7 h-7 mb-3 bg-zinc-900 rounded-md flex items-center justify-center border border-zinc-700">
+                    <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok" class="w-4 h-4 object-contain">
+                </div>
+                <h2 class="text-[20px] font-black text-white leading-tight mb-2">Sistem Iklan Berbasis Data.</h2>
+                <p class="text-[10px] text-zinc-400 leading-relaxed font-medium pr-2">
+                    Berhenti buang budget sia sia. Bangun sistem GMV Max yang terukur, efisien, dan pastinya menguntungkan.
+                </p>
+            </div>
+            
+            <div class="absolute right-0 top-0 bottom-0 w-[55%] h-full z-10">
+                <img src="https://image2url.com/r2/default/images/1775356473841-0438bdbd-2767-44a7-b366-2c0beb0f02ad.png" 
+                     alt="Mentor" 
+                     class="w-full h-full object-cover mask-gradient-left opacity-90 grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+        </section>
+
+        <section class="px-5 py-8 text-center">
+            <p class="text-[12px] text-brand-300 leading-relaxed mb-4">
+                Setelah memahami fondasi toko dan konten yang menjual, kini saatnya masuk ke fase paling krusial yaitu memastikan setiap penjualan benar benar menghasilkan profit.
+            </p>
+            <p class="text-[12px] text-white font-medium leading-relaxed mb-4">
+                Di fase ini, kamu tidak hanya belajar cara setting iklan. Kamu akan diajak membedah struktur biaya, menghitung margin sehat, serta membangun sistem GMV Max yang stabil dan bisa dioptimasi.
+            </p>
+            <p class="text-[12px] text-brand-300 leading-relaxed">
+                Karena di TikTok Shop, yang membuat kita bertahan bukan sekadar traffic tinggi, melainkan kemampuan membaca angka dan mengambil keputusan. Bukan lagi sekadar "asal iklan jalan", tapi membangun sistem penjualan yang terukur dan berkelanjutan.
+            </p>
+        </section>
+
+        <section class="px-4 pb-8 space-y-4">
+            
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900 flex justify-between items-start">
+                    <div>
+                        <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                            <span class="text-zinc-500">09.</span> Harga Jual & Profit
+                        </h3>
+                        <p class="text-[10px] text-zinc-400 mt-1">Biar jualan gak cuma rame, tapi beneran untung.</p>
+                    </div>
+                    <span class="bg-white/10 text-white text-[8px] font-bold px-2 py-1 rounded-md tracking-wider">LIVE ZOOM</span>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Rumus dasar HPP dan menentukan margin yang sehat.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Memahami struktur biaya TikTok Shop (komisi, iklan, affiliate, campaign).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Simulasi target omset versus target profit.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara menentukan harga jual yang ideal dan tetap kompetitif.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Praktik menghitung profit bersih dari produkmu sendiri.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900 flex justify-between items-start">
+                    <div>
+                        <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                            <span class="text-zinc-500">10.</span> Fondasi GMV Max
+                        </h3>
+                        <p class="text-[10px] text-zinc-400 mt-1">Struktur dasar iklan dari produk sampai target ROI.</p>
+                    </div>
+                    <span class="bg-white/10 text-white text-[8px] font-bold px-2 py-1 rounded-md tracking-wider">LIVE ZOOM</span>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara kerja sistem GMV Max yang sebenarnya.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Pilih mode Auto atau Manual, kapan waktu terbaik menggunakannya.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara filter produk dan video yang layak diiklankan.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Menentukan target ROI yang realistis dan alokasi budget.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Kesalahan fatal pemula saat pertama kali menjalankan iklan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900 flex justify-between items-start">
+                    <div>
+                        <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                            <span class="text-zinc-500">11.</span> Optimasi & Scale Up
+                        </h3>
+                        <p class="text-[10px] text-zinc-400 mt-1">Tingkatkan performa iklan terukur tanpa boncos.</p>
+                    </div>
+                    <span class="bg-white/10 text-white text-[8px] font-bold px-2 py-1 rounded-md tracking-wider">LIVE ZOOM</span>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Evaluasi hasil iklan, mengenali kriteria iklan baik dan buruk.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Membaca fase learning dan tahu kapan boleh melakukan intervensi.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Framework evaluasi kampanye iklan yang sederhana.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Strategi aman menaikkan budget iklan untuk scale up.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Kriteria objektif kapan kampanye dilanjut, diperbaiki, atau dihentikan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-line rounded-[16px] overflow-hidden group hover:border-zinc-500 transition-colors">
+                <div class="p-4 border-b border-line bg-zinc-900 flex justify-between items-start">
+                    <div>
+                        <h3 class="text-white font-bold text-[14px] flex items-center gap-2">
+                            <span class="text-zinc-500">12.</span> Metrik & Studi Kasus
+                        </h3>
+                        <p class="text-[10px] text-zinc-400 mt-1">Ambil keputusan tepat berbasis data dashboard.</p>
+                    </div>
+                    <span class="bg-white/10 text-white text-[8px] font-bold px-2 py-1 rounded-md tracking-wider">LIVE ZOOM</span>
+                </div>
+                <div class="p-4 bg-[#0a0a0a]">
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Cara membaca dashboard GMV Max TikTok secara menyeluruh.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Memahami fungsi dan hubungan metrik CTR, CVR, CPC, ROI, dan AOV.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Mendeteksi letak masalah dari pola angka traffic, konversi, atau margin.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Studi kasus kampanye iklan yang sukses versus yang gagal total.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 text-[11px] text-zinc-300">
+                            <span class="text-white shrink-0 mt-0.5">❖</span>
+                            <span>Praktik analisa performa toko bayangan dan pengambilan keputusan cerdas.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="px-4 pb-10 pt-2 border-t border-line">
+            
+            <div class="text-center mb-6 pt-4">
+                <h3 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1">Investasi Terbaik</h3>
+                <h2 class="text-[16px] font-bold text-white leading-tight">Pilih Akses Belajarmu</h2>
+            </div>
+
+            <div class="bg-zinc-200 text-zinc-950 rounded-[18px] p-5 mb-6 text-center border border-zinc-300 shadow-[0_10px_20px_rgba(255,255,255,0.05)] relative overflow-hidden">
+                <div class="absolute top-3 right-[-30px] bg-zinc-950 text-white text-[7px] font-black px-10 py-1 uppercase tracking-widest rotate-45">Best Deal</div>
+                
+                <h2 class="text-[16px] font-black tracking-tight mb-1 uppercase">Akses Semua Modul</h2>
+                <p class="text-[10px] font-bold text-zinc-600 mb-1">Fase 3 (Modul 9 - 12) Lengkap</p>
+                <p class="text-[9px] text-zinc-500 mb-3 font-medium">Free Live Zoom, Rekaman & Grup WA bareng Mentor</p>
+                <div class="text-[22px] font-black mb-4 tracking-tight">Rp 700.000</div>
+                
+                <a href="http://lynk.id/gocbd/4398q900pp3o/checkout" target="_blank" rel="noopener noreferrer" class="block w-full bg-zinc-950 text-white font-bold text-[11px] py-3 rounded-full hover:bg-zinc-800 transition-colors tracking-widest uppercase shadow-md">
+                    Ambil Paket Lengkap
+                </a>
+                <p class="text-[8px] text-zinc-500 mt-2 font-medium">Sekali bayar, akses materi selamanya.</p>
+            </div>
+
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-px bg-line flex-1"></div>
+                <span class="text-[10px] text-zinc-500 font-medium uppercase tracking-widest">Atau Beli Satuan</span>
+                <div class="h-px bg-line flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 9</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Harga Jual & Profit (Zoom).</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/e6w4ywxjzng8/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 9</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 10</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Fondasi GMV Max (Zoom).</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 150.000</div>
+                        <a href="http://lynk.id/gocbd/z2o1yojloolw/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 10</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 11</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Strategi Scale Up (Zoom).</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 300.000</div>
+                        <a href="http://lynk.id/gocbd/2p2982mg1lq7/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 11</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-[16px] p-4 border border-line flex flex-col justify-between hover:border-zinc-600 transition-colors">
+                    <div>
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-1.5">Modul 12</h3>
+                        <p class="text-zinc-400 text-[9px] leading-relaxed mb-4">Analisa Metrik (Zoom).</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-[15px] mb-3">Rp 300.000</div>
+                        <a href="http://lynk.id/gocbd/zwd80do22qeq/checkout" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-zinc-600 bg-zinc-900 text-white text-[10px] font-bold py-2 rounded-full hover:bg-white hover:text-black transition-colors">Pilih Modul 12</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4 bg-surface rounded-[14px] p-3 border border-zinc-700 hover:border-zinc-500 transition-colors relative overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.05)] group">
+                <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-100 to-zinc-500"></div>
+                <div class="absolute -right-10 -top-10 w-24 h-24 bg-white/5 rounded-full blur-xl group-hover:bg-white/10 transition-colors pointer-events-none"></div>
+
+                <div class="flex items-center justify-between pl-3 relative z-10">
+                    <div class="flex-1 pr-2">
+                        <h3 class="text-white font-bold text-[12px] leading-tight mb-0.5">Paket 4 Modul +<br>1 Day Company Training</h3>
+                        <p class="text-zinc-400 text-[8px] leading-tight mt-1">Bedah toko & strategi in-house.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <div class="text-white font-black text-[14px] mb-1.5">Rp 7.700.000</div>
+                        <a href="http://lynk.id/gocbd/99lo7llzo54e/checkout" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-1.5 bg-white text-zinc-950 text-[9px] font-bold rounded-full hover:bg-zinc-200 transition-colors shadow-md">Daftar Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

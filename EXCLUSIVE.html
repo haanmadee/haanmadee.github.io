@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Mentoring - Shopee & TikTok</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            100: '#F8FAFC',
+                            300: '#94A3B8',
+                            400: '#64748B',
+                        },
+                        surface: '#090A0C',
+                        surface2: '#121418',
+                        line: '#272A30'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000; 
+        }
+        .mobile-container {
+            width: 100%;
+            max-width: 480px; 
+            margin: 0 auto;
+            background-color: #050505;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px;
+            box-shadow: 0 0 50px rgba(255,255,255,0.03);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .mask-gradient-fade {
+            -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+        }
+        .vip-card {
+            background: linear-gradient(135deg, #121418 0%, #050505 100%);
+            position: relative;
+            z-index: 1;
+        }
+        .vip-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.02), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        .glow-white {
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body class="text-brand-100 antialiased relative">
+
+    <main class="mobile-container">
+
+        <header class="py-4 px-5 bg-black/80 backdrop-blur-xl sticky top-0 z-50 flex items-center justify-between border-b border-white/5">
+            <a href="https://cuanberkahdigital.id" class="w-9 h-9 flex items-center justify-center bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </a>
+            <div class="px-4 py-1.5 bg-zinc-900 border border-zinc-700 rounded-full">
+                <h1 class="text-[10px] font-black text-white tracking-widest uppercase">VIP Mentoring</h1>
+            </div>
+            <div class="w-9 h-9"></div> 
+        </header>
+
+        <section class="relative w-full h-[520px] flex flex-col justify-end overflow-hidden border-b border-line">
+            <div class="absolute inset-0 z-0">
+                <img src="https://image2url.com/r2/default/images/1775377307395-c4a27eed-03e5-49ae-a884-bf7daa86dfc0.png" 
+                     alt="Exclusive Mentoring" 
+                     class="w-full h-full object-cover object-top mask-gradient-fade opacity-50 grayscale transition-all duration-700">
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent z-10"></div>
+
+            <div class="relative z-20 px-6 pb-12">
+                <div class="flex items-center gap-1.5 mb-5">
+                    <div class="flex items-center gap-2 px-3 py-1.5 bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-full shadow-lg">
+                        <img src="https://cdn.simpleicons.org/shopee/FFFFFF" alt="Shopee" class="w-3.5 h-3.5 object-contain opacity-80">
+                        <div class="w-px h-3 bg-zinc-600"></div>
+                        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok" class="w-3.5 h-3.5 object-contain opacity-80">
+                    </div>
+                    <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest ml-2 leading-none">2 Bulan Penuh</span>
+                </div>
+                
+                <h2 class="text-[34px] font-black text-white leading-[1.1] mb-4 tracking-tight">Dominasi Total.<br><span class="text-zinc-400">Shopee & TikTok.</span></h2>
+                
+                <p class="text-[13px] text-zinc-400 leading-relaxed font-medium max-w-[95%]">
+                    Kolaborasi strategis satu lawan satu bersama Coach Ernest dan Coach Rika Yeo. Bangun blueprint bisnis yang solid dan kuasai dua raksasa e-commerce secara bersamaan tanpa menebak nebak.
+                </p>
+            </div>
+        </section>
+
+        <section class="px-6 py-12 relative overflow-hidden border-b border-line border-dashed">
+            <h3 class="text-[18px] font-black text-white leading-tight mb-4">Membangun dua toko besar butuh lebih dari sekadar kerja keras.</h3>
+            
+            <p class="text-[13px] text-zinc-400 leading-relaxed mb-5">
+                Ingin omset meledak di Shopee dan TikTok sekaligus, tapi bingung menyatukan strateginya? Atau sudah membuang banyak modal iklan tapi hasilnya stagnan?
+            </p>
+            
+            <div class="bg-zinc-900/50 border-l-4 border-zinc-500 p-4 rounded-r-xl mb-6">
+                <p class="text-[12px] text-white font-medium leading-relaxed">
+                    Kelas umum tidak akan menyelesaikan masalah spesifik tokomu. Teori basi hanya membuang waktumu.
+                </p>
+            </div>
+
+            <p class="text-[13px] text-zinc-400 leading-relaxed">
+                Ini adalah program pendampingan eksklusif 2 bulan yang dirancang untuk membongkar tuntas datamu, meracik strategi kampanye yang mematikan, dan membangun sistem yang berjalan otomatis. Fokus 100 persen hanya untuk tokomu.
+            </p>
+        </section>
+
+        <section class="px-6 pb-12 pt-10">
+            <div class="text-center mb-8">
+                <h3 class="text-[11px] font-black text-zinc-500 tracking-widest uppercase mb-2">Kurikulum Strategis</h3>
+                <h2 class="text-[22px] font-black text-white leading-tight">Apa Yang Akan Kita Bangun Bersama?</h2>
+            </div>
+
+            <div class="relative mb-6">
+                <div class="bg-surface2 border border-zinc-800 rounded-[20px] p-6 relative z-10 transition-colors hover:border-zinc-600">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-700">
+                                <img src="https://cdn.simpleicons.org/shopee/FFFFFF" alt="Shopee" class="w-5 h-5 opacity-80">
+                            </div>
+                            <h3 class="text-[18px] font-black text-white">Shopee Masterplan</h3>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block leading-none">Intensif</span>
+                            <span class="text-[14px] font-black text-white">4 Sesi</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Audit & Bedah Potensi</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Identifikasi brutal hambatan tokomu dan temukan celah omset yang selama ini terlewatkan.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Mesin Konversi & SEO</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Rombak total halaman produk, visual katalog, hingga penulisan deskripsi yang memicu transaksi.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Dominasi Traffic & Iklan</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Strategi menguasai pencarian organik dan eksekusi Iklan Shopee tajam tanpa takut bakar uang.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Eksekusi Kampanye Raksasa</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Kalender taktis persiapan Payday, Tanggal Kembar, dan Ramadhan. Dari stok hingga struktur diskon.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="bg-surface2 border border-zinc-800 rounded-[20px] p-6 relative z-10 transition-colors hover:border-zinc-600">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-700">
+                                <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok" class="w-5 h-5 opacity-80">
+                            </div>
+                            <h3 class="text-[18px] font-black text-white">TikTok Blueprint</h3>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block leading-none">Intensif</span>
+                            <span class="text-[14px] font-black text-white">4 Sesi</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Roadmap Penjualan Taktis</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Menyusun arah bisnis yang jelas dan melakukan audit konten untuk memaksimalkan profil tokomu.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Konten Viral & Afiliasi</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Strategi eksekusi konten organik yang menjual dan membagikan sampel secara cerdas ke kreator afiliasi.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Arsitektur Live Streaming</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Membangun alur siaran langsung yang menahan penonton sekaligus memicu antrean pesanan.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0 glow-white"></div>
+                            <div>
+                                <h4 class="text-white font-bold text-[13px] mb-1">Suntikan Iklan Terukur</h4>
+                                <p class="text-[11px] text-zinc-400 leading-relaxed">Penggunaan fitur konversi, voucher, dan iklan GMV Max untuk melipatgandakan omset di momentum penting.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-[11px] font-medium text-zinc-500 text-center mt-6 px-4">Seluruh kurikulum bersifat dinamis. Kami akan menyesuaikan setiap bahasan dengan kapasitas dan target agresif tokomu saat ini.</p>
+        </section>
+
+        <section class="px-6 py-12 bg-zinc-950 border-y border-line">
+            <div class="mb-8 text-center">
+                <h3 class="text-[16px] font-black text-white leading-tight uppercase tracking-wider mb-2">Eksklusivitas Program</h3>
+                <p class="text-[12px] text-zinc-400 leading-relaxed">Kami mendedikasikan waktu sepenuhnya untuk membedah data tokomu secara 1 on 1. Ruang diskusi 100 persen rahasia dan profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-surface2 border border-zinc-800 p-4 rounded-[16px] text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1">Format</p>
+                    <p class="text-[13px] text-white font-bold">Zoom Meeting</p>
+                </div>
+                
+                <div class="bg-surface2 border border-zinc-800 p-4 rounded-[16px] text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1">Peserta</p>
+                    <p class="text-[13px] text-white font-bold">Maks 2 Orang / Tim</p>
+                </div>
+                
+                <div class="bg-surface2 border border-zinc-800 p-4 rounded-[16px] text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1">Durasi Program</p>
+                    <p class="text-[13px] text-white font-bold">2 Bulan Penuh</p>
+                </div>
+                
+                <div class="bg-surface2 border border-zinc-800 p-4 rounded-[16px] text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1">Per Sesi</p>
+                    <p class="text-[13px] text-white font-bold">90 - 120 Menit</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-5 rounded-[16px] bg-zinc-900 border border-zinc-700 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 border border-zinc-600">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-[13px] mb-1">Akses Prioritas</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Berhak masuk ke Grup WhatsApp VIP untuk tanya jawab cepat selama periode mentoring berlangsung.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pt-12 pb-12">
+            <div class="text-center mb-8">
+                <h3 class="text-[12px] font-black text-zinc-500 tracking-widest uppercase mb-2">Bukan Sekadar Mentoring</h3>
+                <h2 class="text-[24px] font-black text-white leading-tight">Ini Kolaborasi Strategis.</h2>
+            </div>
+
+            <div class="vip-card rounded-[24px] p-8 text-center shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+                <div class="inline-block px-4 py-1.5 bg-zinc-800 border border-zinc-600 rounded-full mb-6">
+                    <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Kapasitas Sangat Terbatas</span>
+                </div>
+                
+                <h3 class="text-[16px] font-bold text-white mb-2">Investasi Skala Besar</h3>
+                <p class="text-[11px] text-zinc-400 mb-6 px-4">Hanya dibuka untuk beberapa brand eksklusif setiap bulannya demi menjaga kualitas pendampingan.</p>
+                
+                <div class="flex flex-col items-center justify-center mb-6">
+                    <span class="text-[16px] text-zinc-600 font-medium line-through mb-1">Rp 30.000.000</span>
+                    <div class="text-[38px] font-black text-white leading-none tracking-tighter drop-shadow-md">Rp 20.000.000</div>
+                </div>
+
+                <div class="w-16 h-1 bg-zinc-700 mx-auto rounded-full mb-8"></div>
+
+                <a href="http://lynk.id/gocbd/54gkzx1wymq5/checkout" target="_blank" rel="noopener noreferrer" class="block w-full bg-white text-black text-center py-4 rounded-full font-black text-[13px] uppercase tracking-widest shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:bg-zinc-200 transition-all transform hover:scale-[1.02]">
+                    Amankan Kuota Sekarang
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
