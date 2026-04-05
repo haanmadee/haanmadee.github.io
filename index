@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            100: '#e7e7e7',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                        },
+                        surface: '#121212',
+                        surface2: '#1a1a1a',
+                        line: '#262626'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mobile-container {
+            width: 100%;
+            background-color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px; 
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.08); color: #ffffff; }
+            20% { transform: scale(1); }
+        }
+        .animate-heartbeat {
+            animation: heartbeat 2.5s infinite;
+            display: inline-block; 
+            transform-origin: right center; 
+        }
+
+        /* Animasi Floating Lambat & Ringan */
+        @keyframes drift {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(1deg); }
+        }
+        .animate-floating {
+            animation: drift 6s ease-in-out infinite;
+        }
+        .animate-floating-delay-1 {
+            animation: drift 7s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+        .animate-floating-delay-2 {
+            animation: drift 8s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+        .animate-floating-delay-3 {
+            animation: drift 9s ease-in-out infinite;
+            animation-delay: 4.5s;
+        }
+
+        /* Efek Glow Halus untuk Teks */
+        .text-glow {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.4);
+        }
+
+        /* ANIMASI POCKET STYLE BARU (Single Short Rectangular Card) */
+        .pocket-card-animate {
+            transform: translate(-50%, 20px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .pocket-open .pocket-card-animate {
+            transform: translate(-50%, -45px);
+            opacity: 1 !important;
+            pointer-events: auto; 
+        }
+
+        /* TAMBAHAN CSS UNTUK TESTIMONI MONOCHROME */
+        .testi-card-mono {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            margin-left: -35px; /* Efek overlap menyamping */
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .testi-card-mono:first-child {
+            margin-left: 0; /* Kartu pertama ga perlu minus margin */
+        }
+        .testi-card-mono.active-mono {
+            transform: scale(1.08) translateY(-5px) !important; 
+            z-index: 99 !important; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.9), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+        }
+        .testi-container-wrapper {
+            padding: 15px 25px 30px 25px; 
+        }
+        .active-mono p.line-clamp-4 {
+            -webkit-line-clamp: unset !important; 
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-brand-100 antialiased overflow-x-hidden w-full relative">
+
+    <main class="mobile-container pb-12 pt-4">
+
+        <section class="pt-2 pb-4">
+            <div class="relative w-full">
+                <div id="banner-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2 scroll-smooth">
+                    
+                    <a href="LINK_TUJUAN_BANNER_1" target="_blank" rel="noopener noreferrer" class="block snap-center shrink-0 w-full overflow-hidden border-y border-line aspect-[21/9] relative bg-surface group">
+                        <img src="https://image2url.com/r2/default/images/1775204106631-80ba2971-db83-44ee-90d6-44f12f96490e.png" alt="Banner 1" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center p-4 pointer-events-none">
+                            <h2 class="text-white font-bold text-[14px] leading-tight mb-1">Scale Your Revenue.<br>Max Your Profit.</h2>
+                            <p class="text-brand-300 text-[9px]">Solusi Taktis E-Commerce</p>
+                        </div>
+                    </a>
+
+                    <a href="CT.html" target="_blank" rel="noopener noreferrer" class="block snap-center shrink-0 w-full overflow-hidden border-y border-line aspect-[21/9] relative bg-surface group">
+                        <img src="https://image2url.com/r2/default/images/1775202219596-eb3d405b-7811-4ce6-9f14-3addbf4dc3c1.png" alt="Banner 2" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center p-4 pointer-events-none">
+                            <h2 class="text-white font-bold text-[14px] leading-tight mb-1">1 Day Company<br>Training Privat.</h2>
+                            <p class="text-brand-300 text-[9px]">Bedah Algoritma & Audit Keuangan</p>
+                        </div>
+                    </a>
+
+                    <a href="SHOPEE.html" target="_blank" rel="noopener noreferrer" class="block snap-center shrink-0 w-full overflow-hidden border-y border-line aspect-[21/9] relative bg-surface group">
+                        <img src="https://image2url.com/r2/default/images/1775202268935-9f5e07b7-43b3-4221-8457-710ca087a09f.png" alt="Banner 3" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center p-4 pointer-events-none">
+                            <h2 class="text-white font-bold text-[14px] leading-tight mb-1">10 Modul Eksklusif<br>Shopee & TikTok.</h2>
+                            <p class="text-brand-300 text-[9px]">Materi PDF & Rekaman Siap Eksekusi</p>
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="flex justify-center gap-1.5 mt-2">
+                    <div class="w-3 h-1 bg-white rounded-full"></div>
+                    <div class="w-1 h-1 bg-brand-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-brand-500 rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface py-3 px-2 border-y border-line mb-1">
+            <div class="grid grid-cols-4 gap-1 text-center divide-x divide-line items-center h-full">
+                <a href="https://discord.gg/tz7gjdjvrp" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-full group py-1 hover:scale-110 transition-transform duration-300">
+                    <svg class="w-[24px] h-[24px] fill-current text-zinc-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 127.14 96.36">
+                        <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.31,60,73.31,53s5-12.74,11.43-12.74S96.3,46,96.19,53,91.08,65.69,84.69,65.69Z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://wa.me/6287883390990" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-full group py-1 hover:scale-110 transition-transform duration-300">
+                    <svg class="w-[24px] h-[24px] fill-current text-zinc-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://www.instagram.com/cuan.berkahdigital/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-full group py-1 hover:scale-110 transition-transform duration-300">
+                    <svg class="w-[22px] h-[22px] fill-current text-zinc-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+
+                <a href="https://www.youtube.com/@CuanBerkahDigitalAgency" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-full group py-1 hover:scale-110 transition-transform duration-300">
+                    <svg class="w-[26px] h-[26px] fill-current text-zinc-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="pt-6 pb-10 px-4 border-b border-line bg-[#000000] overflow-visible">
+            
+            <div class="text-center mb-8">
+                <h3 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1.5">PROGRAM UNGGULAN</h3>
+                <h2 class="text-[20px] font-black text-white leading-tight uppercase tracking-widest">Company Training</h2>
+            </div>
+
+            <div class="relative w-full max-w-[340px] h-[270px] mx-auto cursor-pointer">
+                
+                <div class="absolute inset-0 m-auto w-[260px] h-[260px] rounded-2xl overflow-hidden border border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-zinc-900 group">
+                    <img src="https://image2url.com/r2/default/images/1775203559527-a779aec9-a7fa-41f5-80a2-f81fdd39fe5a.png" alt="Trainer" class="w-full h-full object-cover object-top opacity-95 group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                </div>
+
+                <div class="absolute top-[46%] -right-1 animate-floating-delay-1 z-30 pointer-events-none">
+                    <div class="w-[110px] h-[45px] bg-zinc-900 rounded-lg shadow-2xl border border-zinc-700 overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1775355625096-cacb00f6-ad00-4b8f-a4c0-1bfacdb5c639.jpeg" alt="SS Profit" class="w-full h-full object-cover opacity-90 transition-all">
+                    </div>
+                </div>
+
+                <div class="absolute top-[45%] -left-5 animate-floating z-30 pointer-events-none">
+                    <div class="flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-md border border-white/10 p-1.5 rounded-md shadow-2xl rotate-[-4deg]">
+                        <div class="w-4 h-4 bg-zinc-800 rounded flex items-center justify-center shrink-0">
+                            <svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <div class="pr-1">
+                            <p class="text-[5px] text-zinc-400 font-bold uppercase tracking-widest leading-none mb-0.5">BONUS</p>
+                            <p class="text-[8px] text-white font-bold leading-none tracking-wide">Free WA Grup 1 Bln</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="CT.html" target="_blank" rel="noopener noreferrer" class="w-max mx-auto block mt-3 bg-white text-zinc-950 font-bold py-2.5 px-6 rounded-full text-[10px] hover:bg-zinc-200 transition-colors shadow-lg tracking-widest z-10 relative">
+                DAFTAR SESI PRIVAT &rarr;
+            </a>
+
+        </section>
+
+        <section class="py-6 px-2 border-y border-line">
+            <div class="mb-4 px-2">
+                <h2 class="text-[15px] font-bold text-white leading-snug">
+                    Private Coaching
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-2">
+                
+                <div class="bg-surface rounded-xl p-3 border border-line flex flex-col relative group hover:border-zinc-600 transition-colors shadow-sm overflow-hidden">
+                    <a href="PRIVATE_SHOPEE.html" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-20"></a>
+                    
+                    <div class="absolute -right-2 bottom-0 w-16 h-16 opacity-30 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none translate-y-2">
+                        <img src="https://cdn.simpleicons.org/shopee/EE4D2D" alt="Shopee Sharp" class="w-full h-full object-contain">
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-col h-full">
+                        <h3 class="font-bold text-[13px] text-white leading-tight mb-1 group-hover:text-[#EE4D2D] transition-colors">
+                            Private Coaching Shopee
+                        </h3>
+                        <p class="text-[9px] text-zinc-400 mb-3 flex-grow">
+                            Strategi Eksklusif Tokomu
+                        </p>
+                        
+                        <div class="mt-auto">
+                            <div class="w-max inline-flex items-center justify-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm text-white font-bold text-[9px] px-2.5 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-600 group-hover:bg-zinc-800 transition-colors shadow-sm text-center">
+                                Detail <span class="text-[12px] leading-none">&#10549;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl p-3 border border-line flex flex-col relative group hover:border-zinc-600 transition-colors shadow-sm overflow-hidden">
+                    <a href="PRIVATE_TIKTOK.html" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-20"></a>
+                    
+                    <div class="absolute -right-2 bottom-0 w-16 h-16 opacity-20 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none translate-y-2">
+                        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok Sharp" class="w-full h-full object-contain">
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-col h-full">
+                        <h3 class="font-bold text-[13px] text-white leading-tight mb-1 group-hover:text-cyan-400 transition-colors">
+                            Private Coaching Tiktok Shop
+                        </h3>
+                        <p class="text-[9px] text-zinc-400 mb-3 flex-grow">
+                            Strategi Eksklusif Tokomu
+                        </p>
+                        
+                        <div class="mt-auto">
+                            <div class="w-max inline-flex items-center justify-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm text-white font-bold text-[9px] px-2.5 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-600 group-hover:bg-zinc-800 transition-colors shadow-sm text-center">
+                                Detail <span class="text-[12px] leading-none">&#10549;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-2 bg-surface rounded-xl p-2.5 border border-yellow-500/30 flex items-center gap-2 relative group hover:border-yellow-500/60 transition-colors shadow-sm overflow-hidden">
+                <a href="EXCLUSIVE.html" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-20"></a>
+                
+                <div class="absolute -right-10 top-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-500/10 blur-[20px] pointer-events-none"></div>
+                
+                <div class="flex items-center shrink-0 relative z-10 pl-1">
+                    <div class="w-7 h-7 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-700 z-20 shadow-md">
+                        <img src="https://cdn.simpleicons.org/shopee/EE4D2D" alt="Shopee" class="w-4 h-4 object-contain">
+                    </div>
+                    <div class="w-7 h-7 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-700 -ml-2.5 z-10 shadow-md">
+                        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok" class="w-4 h-4 object-contain">
+                    </div>
+                </div>
+                
+                <div class="flex-1 flex flex-col justify-center relative z-10 pl-1">
+                    <div class="flex items-center gap-1 mb-0.5">
+                        <h3 class="font-bold text-[12px] text-white leading-tight group-hover:text-yellow-400 transition-colors">Exclusive Mentoring</h3>
+                    </div>
+                    <p class="text-[8px] text-zinc-400 leading-tight">8 Sesi (Shopee + TikTok) & Grup WA</p>
+                </div>
+                
+                <div class="text-right shrink-0 relative z-10 pr-1">
+                    <p class="text-[8px] text-zinc-500 line-through decoration-red-500 mb-0.5">Rp 30.000.000</p>
+                    <p class="text-[12px] font-bold text-yellow-500 leading-none">Rp 20.000.000</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-2 px-4 mt-2">
+            <a href="https://www.youtube.com/watch?v=ZP6rvChkUEw" target="_blank" rel="noopener noreferrer" class="block relative rounded-xl overflow-hidden border border-line aspect-video bg-surface flex items-end group">
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity">
+                    <source src="https://image2url.com/r2/default/videos/1775355535095-0331b279-96e6-4ba6-b95c-aaa9d64147a0.mp4" type="video/mp4">
+                    Browser kamu tidak mendukung tag video.
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none"></div>
+                <div class="relative z-10 p-3 w-full flex items-center justify-between pointer-events-none">
+                    <div>
+                        <h3 class="text-[13px] font-bold leading-tight text-white mb-0.5">
+                            Roadmap Tembus Omzet 1M Menjelang Ramadan
+                        </h3>
+                        <p class="text-[9px] text-brand-300">Tonton Video Lengkapnya &rarr;</p>
+                    </div>
+                    <div class="w-8 h-8 shrink-0 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 ml-2">
+                        <svg class="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <div class="px-4 mt-8 mb-2">
+            <h3 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1">Ecosystem Library</h3>
+            <h2 class="text-[18px] font-bold text-white leading-tight">Modul & Rekaman Kelas</h2>
+            <p class="text-[10px] text-zinc-400 mt-1">Pilih materi spesifik untuk bangun sistem dan scale up tokomu.</p>
+        </div>
+
+        <section class="py-2 px-4 mb-4 relative">
+            <div class="bg-surface rounded-[20px] relative overflow-hidden pt-4 pb-3 border border-line shadow-xl z-0">
+                
+                <img src="https://image2url.com/r2/default/images/1775356444352-20e6afd5-6566-4dce-9b5c-11235397e362.png" alt="Promo" class="absolute top-0 left-[-20px] w-[180px] h-full object-cover object-top opacity-95 z-0" style="-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%); mask-image: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);">
+
+                <div class="px-4 flex items-center justify-between relative z-10 mb-5">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-6 h-6 shrink-0">
+                            <img src="https://cdn.simpleicons.org/shopee/EE4D2D" alt="Shopee Logo" class="w-full h-full object-contain">
+                        </div>
+                        <h2 class="text-white font-bold text-[16px] tracking-tight">Shopee</h2>
+                        <div class="bg-zinc-800 border border-zinc-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider shadow-md">
+                            Full system
+                        </div>
+                    </div>
+                    <button id="slide-next-btn" class="p-1 hover:bg-zinc-800 rounded-full transition-colors group cursor-pointer focus:outline-none shrink-0">
+                        <svg class="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+
+                <div class="relative z-10 pl-[38%] pr-4 w-full">
+                    <div id="flash-sale-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 pb-2 pt-1 scroll-smooth">
+                        
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-700 flex flex-col">
+                            <div class="absolute top-2 right-2 bg-white text-zinc-950 text-[7px] px-1.5 py-0.5 rounded font-bold tracking-wider z-20">HOT</div>
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Shopee Masterclass</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Paket Lengkap</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight">(Modul 1-10) Auto Cuan!</span>
+                            </div>
+                            <p class="text-white font-bold text-[12px] mb-4">Rp1.500.000</p>
+                            <a href="SHOPEE.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-white hover:bg-zinc-200 text-zinc-950 font-bold text-[10px] py-1.5 rounded-full transition-colors shadow-[0_0_15px_rgba(255,255,255,0.15)]">Ambil Paket</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 1</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Jebol Organik</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Bikin Produkmu Ditemukan & Dibeli</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/zew6wd21wv81/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 2</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Visual Hipnotis</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Optimasi Konten Visual Toko</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/3g1e1n4yxolz/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full mb-3 transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 3</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Fondasi Konversi</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Trik yang Tidak Boleh Dilewatkan</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/d7qjlmr1o1o2/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 4</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Booster Penjualan</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Rahasia Tools Maksimal</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/x0dkwn8d1623/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 5</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Analisa Strategi</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Performa & Strategi Promosi</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/8mpgd3d754gp/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 6</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Magnet Traffic</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Tarik Pembeli ke Tokomu</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp150.000</p>
+                            <a href="http://lynk.id/gocbd/880rp3pnrj86/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 7</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Bedah Performa</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Baca Angka & Temukan Strategi</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp200.000</p>
+                            <a href="http://lynk.id/gocbd/rke4ey88485q/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 8</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Live & Video</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Bangun Interaksi & Konversi</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp200.000</p>
+                            <a href="http://lynk.id/gocbd/vkz4zy28r5kj/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 9</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Mindset Iklan</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Fondasi Sukses Beriklan</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp300.000</p>
+                            <a href="http://lynk.id/gocbd/v4qkqyw56ewq/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <h3 class="text-white font-medium text-[10px] mb-1 line-clamp-1">Modul 10</h3>
+                            <div class="flex flex-col mb-2 flex-grow">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-0.5">Jago Iklan</span>
+                                <span class="text-zinc-400 text-[8px] leading-tight line-clamp-2">Trik Sederhana Auto Profit</span>
+                            </div>
+                            <p class="text-zinc-300 font-bold text-[12px] mb-4">Rp300.000</p>
+                            <a href="http://lynk.id/gocbd/kjl5ln75nj47/checkout" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Pilih Modul</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="relative z-10 pr-4 mt-2 mb-1 flex justify-end">
+                    <a href="LINK_SHOW_MORE_SHOPEE" target="_blank" rel="noopener noreferrer" class="text-[9px] text-zinc-400 hover:text-white transition-colors flex items-center gap-1 font-medium tracking-wide">
+                        Show more <span class="text-[11px] leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-2 px-4 mb-6 relative">
+            <div class="bg-surface rounded-[20px] relative overflow-hidden pt-4 pb-3 border border-line shadow-xl z-0">
+                
+                <img src="https://image2url.com/r2/default/images/1775356473841-0438bdbd-2767-44a7-b366-2c0beb0f02ad.png" alt="Promo TikTok" class="absolute top-0 left-[-20px] w-[180px] h-full object-cover object-top opacity-95 z-0" style="-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%); mask-image: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);">
+
+                <div class="px-4 flex items-center justify-between relative z-10 mb-5">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-6 h-6 shrink-0">
+                            <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok Logo" class="w-full h-full object-contain">
+                        </div>
+                        <h2 class="text-white font-bold text-[16px] tracking-tight">TikTok Shop</h2>
+                        <div class="bg-zinc-800 border border-zinc-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider shadow-md">
+                            Mentoring & Live
+                        </div>
+                    </div>
+                    <button id="slide-next-btn-tiktok" class="p-1 hover:bg-zinc-800 rounded-full transition-colors group cursor-pointer focus:outline-none shrink-0">
+                        <svg class="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+
+                <div class="relative z-10 pl-[38%] pr-4 w-full">
+                    <div id="tiktok-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 pb-2 pt-1 scroll-smooth">
+                        
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-700 flex flex-col">
+                            <div class="absolute top-2 right-2 bg-white text-zinc-950 text-[7px] px-1.5 py-0.5 rounded font-bold tracking-wider z-20">HOT</div>
+                            <div class="flex flex-col mb-4 flex-grow mt-3">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul Lengkap</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Self-Learning: PDF & Rekaman optimasi komplit</span>
+                            </div>
+                            <a href="TIKTOK.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-white hover:bg-zinc-200 text-zinc-950 font-bold text-[10px] py-1.5 rounded-full transition-colors shadow-[0_0_15px_rgba(255,255,255,0.15)]">Detail Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <div class="flex flex-col mb-4 flex-grow pt-1">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul 1-4</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Bongkar Rahasia algoritma tiktok shop</span>
+                            </div>
+                            <a href="TIKTOK1.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Detail Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <div class="flex flex-col mb-4 flex-grow pt-1">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul 5-8</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Optimasi Short Video VT & Branding di Tiktok Shop</span>
+                            </div>
+                            <a href="TIKTOK2.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Detail Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <div class="flex flex-col mb-4 flex-grow pt-1">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul 9-12</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Membangun sistem Iklan Tiktok berbasis profit dan data (Webinar + Rekaman)</span>
+                            </div>
+                            <a href="TIKTOK3.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Detail Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <div class="flex flex-col mb-4 flex-grow pt-1">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul 13-16</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Sistem Live dan Affiliate Tiktok Shop</span>
+                            </div>
+                            <a href="TIKTOK4.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Detail Modul</a>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-[145px] bg-zinc-950 rounded-[14px] p-3 shadow-2xl relative border border-zinc-800 flex flex-col">
+                            <div class="flex flex-col mb-4 flex-grow pt-1">
+                                <span class="text-white font-bold text-[13px] leading-tight mb-1">Modul 17-20</span>
+                                <span class="text-zinc-400 text-[9px] leading-tight">Analisis & Scale up Tiktok Shop</span>
+                            </div>
+                            <a href="TIKTOK5.html" target="_blank" rel="noopener noreferrer" class="mt-auto block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-[10px] py-1.5 rounded-full transition-colors border border-zinc-700">Detail Modul</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="relative z-10 pr-4 mt-2 mb-1 flex justify-end">
+                    <a href="TIKTOK.html" target="_blank" rel="noopener noreferrer" class="text-[9px] text-zinc-400 hover:text-white transition-colors flex items-center gap-1 font-medium tracking-wide">
+                        Show more <span class="text-[11px] leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-2 px-4 mb-4 relative overflow-hidden">
+            <div class="bg-surface rounded-xl border border-line shadow-sm relative group overflow-hidden h-[60px] hover:border-zinc-500 transition-colors cursor-pointer">
+                <a href="WEBINAR.html" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-20"></a>
+                
+                <div class="absolute right-0 top-0 bottom-0 w-[110px] z-30 flex items-center justify-end pr-3 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-surface/90 to-surface rounded-r-xl backdrop-blur-sm z-10 border-l border-line/20"></div>
+                    <p class="text-[12px] font-bold text-brand-100 leading-none relative z-20 tracking-wide text-glow">Rp199.900</p>
+                </div>
+
+                <div id="webinar-slider" class="flex h-full w-full transition-transform duration-500 ease-in-out">
+                    
+                    <div class="w-full h-full shrink-0 flex items-center px-3.5 pr-[110px]">
+                        <div class="flex-1 flex flex-col justify-center">
+                            <h3 class="font-bold text-[11px] text-white leading-tight mb-0.5">Webinar Juli 2025: Bongkar trik jualan Rame!</h3>
+                            <p class="text-[8px] text-zinc-400 leading-tight line-clamp-2">Strategi Data, Konten Visual Hipnotis, dan Iklan Profit Shopee & TikTok.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-full shrink-0 flex items-center px-3.5 pr-[110px]">
+                        <div class="flex-1 flex flex-col justify-center">
+                            <h3 class="font-bold text-[11px] text-white leading-tight mb-0.5">Bareng Expert Ernest & Rika</h3>
+                            <p class="text-[8px] text-zinc-400 leading-tight line-clamp-2">Kuasai Visual VT, Live Streaming Konversi Tinggi, sampai Produk Laris Manis.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-full shrink-0 flex items-center px-3.5 pr-[110px]">
+                        <div class="flex-1 flex flex-col justify-center">
+                            <h3 class="font-bold text-[11px] text-white leading-tight mb-0.5">Optimasi Iklan & Scale up Penjualan</h3>
+                            <p class="text-[8px] text-zinc-400 leading-tight line-clamp-2">Ambil materi eksklusif webinar sekarang dan maksimalkan GMV tokomu!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="absolute bottom-1 left-3 flex justify-start gap-1 z-25">
+                    <div class="w-1.5 h-0.5 bg-white rounded-full transition-colors webinar-dot"></div>
+                    <div class="w-1.5 h-0.5 bg-zinc-700 rounded-full transition-colors webinar-dot"></div>
+                    <div class="w-1.5 h-0.5 bg-zinc-700 rounded-full transition-colors webinar-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-2 px-4 mb-6 text-center border-t border-line relative overflow-visible">
+            
+            <div class="mb-5 relative z-10 pt-4">
+                <h3 class="text-[12px] font-bold text-brand-400 uppercase tracking-widest mb-1">Pay What You Want</h3>
+                <h2 class="text-[16px] font-bold text-white leading-tight mb-2">Framework Profit & Biaya</h2>
+                <p class="text-[10px] text-zinc-400 leading-relaxed max-w-[320px] mx-auto">
+                    Akurat hitung potongan admin <span class="text-white font-medium">Shopee & TikTok</span>. Ambil datanya dan atur strategi harga jualanmu sekarang.
+                </p>
+            </div>
+
+            <div id="pocket-container" class="relative w-[180px] h-[130px] mx-auto cursor-pointer pocket-wrapper mt-2 group">
+                
+                <a href="http://lynk.id/gocbd/p6em36y65nzw/checkout" target="_blank" rel="noopener noreferrer" id="pocket-card-framework" class="pocket-card-animate absolute bottom-[10px] left-1/2 -translate-x-1/2 w-[88%] h-[60px] bg-gradient-to-b from-white to-zinc-300 rounded-t-xl p-3 flex items-center justify-start z-10 shadow-[0_-10px_20px_rgba(255,255,255,0.05)] border border-zinc-200 opacity-5 pointer-events-none">
+                    <div class="w-6 h-6 bg-zinc-950 rounded-full flex items-center justify-center border border-zinc-800 shrink-0">
+                        <span class="text-[12px]">󠁯•󠁏</span>
+                    </div>
+                    <div class="ml-2.5 text-left flex-grow">
+                        <h4 class="text-zinc-950 font-bold text-[10px] leading-tight mb-0.5">Akses File Framework</h4>
+                        <p class="text-zinc-600 text-[8px] font-bold bg-zinc-200 px-2 py-0.5 rounded-full w-max"> &rarr;</p>
+                    </div>
+                </a>
+
+                <div class="absolute bottom-0 left-0 w-full h-[70px] bg-zinc-900 border border-zinc-700 rounded-2xl z-20 shadow-[0_-5px_25px_rgba(0,0,0,0.8)] flex flex-col items-center text-center overflow-hidden">
+                    <div class="absolute inset-[4px] border border-dashed border-zinc-700/60 rounded-xl pointer-events-none"></div>
+                    
+                    <div id="pocket-indicator" class="w-10 h-1 bg-zinc-700 rounded-full mt-3.5 mb-2 transition-colors duration-300 group-hover:bg-zinc-500 relative z-30"></div>
+                    
+                    <p class="text-[9px] text-zinc-500 font-medium tracking-widest uppercase relative z-30">Tap Dompet</p>
+                </div>
+            </div>
+            
+            <p id="pocket-hint" class="text-[10px] text-brand-300 mt-2 animate-pulse transition-opacity duration-300 z-10 relative">Coba buka dompet di atas!</p>
+        </section>
+
+        <section class="py-6 px-0 mb-2 border-t border-line relative overflow-hidden">
+            
+            <div class="text-center mb-4 px-4 relative z-10">
+                <h3 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1">Rating & Reviews</h3>
+                <h2 class="text-[18px] font-bold text-white leading-tight">Trusted by people</h2>
+            </div>
+            
+            <div class="flex overflow-x-auto hide-scrollbar testi-container-wrapper items-center">
+                <div class="flex items-center" id="testi-mono-container">
+                    
+                    <div class="testi-card-mono w-[180px] min-h-[110px] h-auto bg-zinc-900 border border-zinc-800 rounded-[14px] p-3.5 shadow-lg flex flex-col relative" style="transform: rotate(-3deg) translateY(5px);">
+                        <div class="text-zinc-400 mb-1 text-[8px] tracking-widest">★★★★★</div>
+                        <p class="text-[9px] text-zinc-300 leading-snug mb-1 line-clamp-4">"Makin privat makin seru ternyata, bisa di terapkan yang didiskusikan. yang pasti kita bisa tau kekurangan toko kita seperti apa? dan scale up nya kayak gimana. Sukses Terus CBD."</p>
+                        <p class="text-[10px] font-bold text-white mt-auto">Randy</p>
+                    </div>
+
+                    <div class="testi-card-mono w-[180px] min-h-[110px] h-auto bg-zinc-800 border border-zinc-700 rounded-[14px] p-3.5 shadow-lg flex flex-col relative" style="transform: rotate(2deg) translateY(-2px);">
+                        <div class="text-zinc-300 mb-1 text-[8px] tracking-widest">★★★★★</div>
+                        <p class="text-[9px] text-zinc-200 leading-snug mb-1 line-clamp-4">"Materinya Lengkap dan relate. dan sesuai yang dibutuhkan"</p>
+                        <p class="text-[10px] font-bold text-white mt-auto">Christin</p>
+                    </div>
+
+                    <div class="testi-card-mono w-[180px] min-h-[110px] h-auto bg-[#1a1a1a] border border-zinc-700 rounded-[14px] p-3.5 shadow-lg flex flex-col relative" style="transform: rotate(-1deg) translateY(4px);">
+                        <div class="text-zinc-500 mb-1 text-[8px] tracking-widest">★★★★★</div>
+                        <p class="text-[9px] text-zinc-400 leading-snug mb-1 line-clamp-4">"Akhirnya dapet materi yang gw banget. Mudah dimengerti dan dipraktikan. Terimakasih CBD"</p>
+                        <p class="text-[10px] font-bold text-white mt-auto">Erik</p>
+                    </div>
+
+                    <div class="testi-card-mono w-[180px] min-h-[110px] h-auto bg-zinc-900 border border-zinc-800 rounded-[14px] p-3.5 shadow-lg flex flex-col relative" style="transform: rotate(4deg) translateY(-4px);">
+                        <div class="text-zinc-300 mb-1 text-[8px] tracking-widest">★★★★★</div>
+                        <p class="text-[9px] text-zinc-300 leading-snug mb-1 line-clamp-4">"Materi masih relate di tahun 2026, jadi tau gimana cara bedah toko sendiri biar maksimal"</p>
+                        <p class="text-[10px] font-bold text-white mt-auto">Deby</p>
+                    </div>
+
+                    <div class="testi-card-mono w-[180px] min-h-[110px] h-auto bg-zinc-800 border border-zinc-600 rounded-[14px] p-3.5 shadow-lg flex flex-col relative" style="transform: rotate(-2deg) translateY(2px);">
+                        <div class="text-zinc-400 mb-1 text-[8px] tracking-widest">★★★★★</div>
+                        <p class="text-[9px] text-zinc-200 leading-snug mb-1 line-clamp-4">"Gak nyangka kalau isinya lengkap dan detail. Daging banget. Beda sama materi yang sebelah"</p>
+                        <p class="text-[10px] font-bold text-white mt-auto">Agung</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <p id="testi-mono-hint" class="text-center text-[9px] text-brand-400 mt-2 animate-pulse relative z-10">Geser & tap kartu</p>
+        </section>
+
+        <section class="pt-6 pb-2 px-4 text-center border-t border-line">
+            <div class="flex justify-center items-center gap-6 opacity-60">
+                <a href="https://www.instagram.com/cuan.berkahdigital/" target="_blank" class="hover:text-white hover:opacity-100 transition-all hover:scale-110">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://www.youtube.com/@CuanBerkahDigitalAgency" target="_blank" class="hover:text-white hover:opacity-100 transition-all hover:scale-110">
+                    <svg viewBox="0 0 24 24" class="w-[26px] h-[26px] fill-current">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <div class="mt-4 mb-2 px-4 text-center">
+            <p class="text-[10px] italic text-brand-500 font-medium">"Not everyone needs this. But if you do, you’ll know."</p>
+        </div>
+
+    </main>
+
+    <div class="fixed bottom-6 right-6 md:right-[calc(50%-220px)] z-50 flex flex-col items-center gap-3">
+        
+        <div id="floating-menu" class="flex flex-col gap-3 transition-all duration-500 opacity-0 translate-y-8 pointer-events-none">
+            
+            <a href="https://discord.gg/tz7gjdjvrp" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-[42px] h-[42px] bg-[#5865F2] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 relative group">
+                <span class="absolute right-12 bg-zinc-800 text-[10px] px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-line">Discord</span>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 127.14 96.36">
+                    <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.31,60,73.31,53s5-12.74,11.43-12.74S96.3,46,96.19,53,91.08,65.69,84.69,65.69Z"/>
+                </svg>
+            </a>
+            
+            <a href="https://wa.me/6287883390990" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-[42px] h-[42px] bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 relative group">
+                <span class="absolute right-12 bg-zinc-800 text-[10px] px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-line">WhatsApp</span>
+                <svg class="w-[22px] h-[22px] fill-current" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <button id="floating-toggle" class="flex items-center justify-center w-[46px] h-[46px] bg-zinc-900 border border-line rounded-full shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-zinc-800 transition-colors z-10">
+                    <svg id="arrow-icon" class="w-5 h-5 text-white transition-transform duration-500 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </button>
+                
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Main Banner Slider Logic
+            const slider = document.getElementById('banner-slider');
+            let autoSlideInterval;
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(function() {
+                    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+                    if (slider.scrollLeft >= maxScrollLeft - 10) { 
+                        slider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+                    }
+                }, 3000); 
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            if(slider) {
+                startAutoSlide();
+                slider.addEventListener('touchstart', stopAutoSlide);
+                slider.addEventListener('touchend', startAutoSlide);
+                slider.addEventListener('mouseenter', stopAutoSlide);
+                slider.addEventListener('mouseleave', startAutoSlide);
+            }
+
+            // Product Slider Horizontal Manual Scroll Logic (SHOPEE)
+            const flashSaleSlider = document.getElementById('flash-sale-slider');
+            const slideNextBtn = document.getElementById('slide-next-btn');
+
+            if (slideNextBtn && flashSaleSlider) {
+                slideNextBtn.addEventListener('click', () => {
+                    const cardWidth = 157; 
+                    const maxScrollLeft = flashSaleSlider.scrollWidth - flashSaleSlider.clientWidth;
+                    if (flashSaleSlider.scrollLeft >= maxScrollLeft - 10) {
+                        flashSaleSlider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        flashSaleSlider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
+                });
+            }
+
+            // Product Slider Horizontal Manual Scroll Logic (TIKTOK)
+            const tiktokSlider = document.getElementById('tiktok-slider');
+            const slideNextBtnTiktok = document.getElementById('slide-next-btn-tiktok');
+
+            if (slideNextBtnTiktok && tiktokSlider) {
+                slideNextBtnTiktok.addEventListener('click', () => {
+                    const cardWidth = 157; 
+                    const maxScrollLeft = tiktokSlider.scrollWidth - tiktokSlider.clientWidth;
+                    if (tiktokSlider.scrollLeft >= maxScrollLeft - 10) {
+                        tiktokSlider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        tiktokSlider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
+                });
+            }
+
+            // Webinar Auto-Slider Logic
+            const webinarSlider = document.getElementById('webinar-slider');
+            const webinarDots = document.querySelectorAll('.webinar-dot');
+            let currentWebinarSlide = 0;
+
+            if (webinarSlider && webinarDots.length > 0) {
+                setInterval(() => {
+                    currentWebinarSlide = (currentWebinarSlide + 1) % 3;
+                    webinarSlider.style.transform = `translateX(-${currentWebinarSlide * 100}%)`;
+                    
+                    webinarDots.forEach((dot, index) => {
+                        if(index === currentWebinarSlide) {
+                            dot.classList.replace('bg-zinc-700', 'bg-white');
+                        } else {
+                            dot.classList.replace('bg-white', 'bg-zinc-700');
+                        }
+                    });
+                }, 3500); 
+            }
+
+            // Pocket Logic (Single Short Card)
+            const pocketContainer = document.getElementById('pocket-container');
+            const pocketHint = document.getElementById('pocket-hint');
+            
+            if (pocketContainer) {
+                pocketContainer.addEventListener('click', function(e) {
+                    if (!e.target.closest('a')) {
+                        this.classList.toggle('pocket-open');
+                        
+                        if(this.classList.contains('pocket-open')) {
+                            if(pocketHint) pocketHint.style.opacity = '0';
+                        } else {
+                            if(pocketHint) pocketHint.style.opacity = '1';
+                        }
+                    }
+                });
+            }
+
+            // Floating Expandable Menu Logic
+            const toggleBtn = document.getElementById('floating-toggle');
+            const floatingMenu = document.getElementById('floating-menu');
+            const arrowIcon = document.getElementById('arrow-icon');
+
+            if(toggleBtn && floatingMenu) {
+                toggleBtn.addEventListener('click', () => {
+                    floatingMenu.classList.toggle('opacity-0');
+                    floatingMenu.classList.toggle('translate-y-8');
+                    floatingMenu.classList.toggle('pointer-events-none');
+                    
+                    arrowIcon.classList.toggle('rotate-180');
+                });
+
+                document.addEventListener('click', (event) => {
+                    if (!toggleBtn.contains(event.target) && !floatingMenu.contains(event.target)) {
+                        floatingMenu.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+                        arrowIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // TESTIMONIAL MONOCHROME LOGIC
+            const testiMonoCards = document.querySelectorAll('.testi-card-mono');
+            const testiMonoHint = document.getElementById('testi-mono-hint');
+            
+            if (testiMonoCards.length > 0) {
+                testiMonoCards.forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        const isActive = this.classList.contains('active-mono');
+
+                        testiMonoCards.forEach(c => {
+                            c.classList.remove('active-mono');
+                        });
+
+                        if(!isActive) {
+                            this.classList.add('active-mono');
+                            if(testiMonoHint) testiMonoHint.style.opacity = '0';
+                            
+                            this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            if(testiMonoHint) testiMonoHint.style.opacity = '1';
+                        }
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.testi-card-mono')) {
+                        testiMonoCards.forEach(c => c.classList.remove('active-mono'));
+                        if(testiMonoHint) testiMonoHint.style.opacity = '1';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
