@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Kurikulum - CBD Mentorship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#e4e4e7',
+                        shopee: '#EE4D2D'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e4e4e7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .module-card {
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(238, 77, 45, 0.4);
+            background-color: #0f0f11;
+        }
+        
+        .desc-transition {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="w-full relative selection:bg-shopee/30 selection:text-white">
+
+    <main class="max-w-screen-xl mx-auto pb-16 pt-6 px-4 sm:px-6 lg:px-8">
+        
+        <section class="relative z-10 mb-8 sm:mb-10">
+            <div class="relative p-6 sm:p-10 rounded-[20px] sm:rounded-[24px] bg-gradient-to-br from-[#121212] to-black border border-zinc-800 overflow-hidden flex flex-col md:flex-row items-start gap-6 sm:gap-8 shadow-2xl">
+                <div class="absolute -top-10 -right-10 w-72 h-72 bg-shopee/10 blur-[100px] pointer-events-none"></div>
+
+                <div class="relative z-10 w-full">
+                    
+                    <div class="flex items-center gap-3 mb-5 border-b border-zinc-800/70 pb-5">
+                        <a href="https://cuanberkahdigital.web.id" class="w-8 h-8 flex items-center justify-center bg-zinc-900 rounded-full border border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 transition-colors">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="inline-flex items-center bg-zinc-900 text-shopee px-3 py-1.5 rounded-full border border-zinc-800">
+                            <span class="text-[9px] sm:text-[11px] font-black uppercase tracking-widest">Premium Mentorship Bundle</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee Logo" class="h-6 sm:h-9 object-contain">
+                        <h2 class="text-[26px] sm:text-[40px] font-black text-white leading-none tracking-tight">Masterclass</h2>
+                    </div>
+                    
+                    <h3 class="text-[14px] sm:text-[16px] font-bold text-zinc-300 mb-4 tracking-wide">Panduan Mendominasi Algoritma dan Konversi</h3>
+                    
+                    <div class="mb-5 max-w-2xl">
+                        <div id="desc-content" class="text-[12px] sm:text-[14px] text-zinc-400 leading-relaxed space-y-3 text-justify sm:text-left line-clamp-3 desc-transition">
+                            <p>
+                                Program ini dirancang khusus untuk seller yang ingin merajai pasar Shopee secara terstruktur. Tidak peduli apakah tokomu baru merintis atau sedang mencari cara memecah kebuntuan omzet, kurikulum ini menyajikan peta jalan yang jelas dan aplikatif.
+                            </p>
+                            <p>
+                                Mulai dari membangun fondasi pencarian produk, meracik visual yang mengundang klik, hingga strategi agresif menggunakan Shopee Ads, Live, dan ekosistem Affiliate. Seluruh materi diformulasikan berdasarkan data dan studi kasus nyata dari toko yang sudah berhasil, bukan sekadar teori dasar.
+                            </p>
+                        </div>
+                        <button id="btn-show-more" onclick="toggleDesc()" class="mt-2 text-[11px] font-bold text-shopee hover:text-white transition-colors uppercase tracking-widest flex items-center gap-1">
+                            Baca Selengkapnya <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="mb-6 max-w-2xl">
+                        <p class="text-[12px] sm:text-[13px] text-zinc-500 font-medium">
+                            * Sudah termasuk private konsultasi secara online.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2 p-4 bg-zinc-900/50 rounded-[16px] border border-zinc-800/50 max-w-2xl">
+                        <div>
+                            <p class="text-[11px] text-zinc-500 line-through font-medium leading-none mb-1.5">Harga Normal Rp 1.900.000</p>
+                            <p class="text-[20px] sm:text-[24px] font-black text-white leading-none">Rp 1.500.000</p>
+                        </div>
+                        <a href="http://lynk.id/gocbd/vpqz1wmgrx3x/checkout" target="_blank" class="w-full sm:w-auto text-center bg-white hover:bg-zinc-200 text-black font-bold py-3 px-8 rounded-full text-[11px] tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                            Ambil Full Bundle
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 relative z-10 flex flex-col items-center text-center sm:items-start sm:text-left">
+            <h3 class="text-[18px] sm:text-[20px] font-bold text-white mb-1">Eksplorasi Katalog Modul</h3>
+            <p class="text-[12px] sm:text-[13px] text-zinc-500">Sesuaikan dengan kebutuhan dan tantangan tokomu saat ini.</p>
+        </section>
+
+        <section class="relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
+                
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">01</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=400" alt="SEO dan Pencarian" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 1</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Bikin Produk Ditemukan & Dibeli</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Optimasi Judul Algoritma</li>
+                            <li>Copywriting Deskripsi</li>
+                            <li>Riset Kata Kunci Organik</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/zew6wd21wv81/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">02</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=400" alt="Fotografi Produk" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 2</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Optimasi Konten Visual Produk</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Strategi Hook Visual</li>
+                            <li>Angle dan Komposisi Foto</li>
+                            <li>Konversi via Video Pendek</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/3g1e1n4yxolz/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">03</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=400" alt="Tata Letak Minimalis" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 3</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Fondasi Konversi Toko</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Dekorasi Profesional</li>
+                            <li>Setting Kategori Cerdas</li>
+                            <li>Psikologi Tata Letak</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/d7qjlmr1o1o2/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">04</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=400" alt="Transaksi Penjualan" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 4</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Tools Booster Penjualan</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Seting Voucher dan Diskon</li>
+                            <li>Trik Flash Sale Internal</li>
+                            <li>Pemicu Urgensi Pembeli</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/x0dkwn8d1623/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">05</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=400" alt="Buku Catatan Analisis" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 5</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Analisa Performa & Strategi</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Membaca Metrik Toko</li>
+                            <li>Evaluasi ROI Campaign</li>
+                            <li>Strategi Promosi Lanjutan</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/8mpgd3d754gp/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">06</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=400" alt="Layar Smartphone" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 6</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Tools Magnet Traffic Toko</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Broadcast Chat Eksekusi</li>
+                            <li>Ekosistem Affiliate</li>
+                            <li>Tarik Traffic Organik</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 150.000</span>
+                        <a href="http://lynk.id/gocbd/880rp3pnrj86/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">07</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" alt="Grafik Performa Data" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 7</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Baca Angka & Evaluasi Toko</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Solusi Bounce Rate Tinggi</li>
+                            <li>Taktik Produk Mati</li>
+                            <li>Pengujian A/B Konversi</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 200.000</span>
+                        <a href="http://lynk.id/gocbd/rke4ey88485q/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">08</div>
+                    <div class="relative z-10">
+                        <img src="https://image2url.com/r2/default/images/1775479872373-ceade9a2-d624-4261-9722-62015c2ed8c5.jpeg" alt="Ring Light Live Streaming" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 8</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Shopee Live & Video</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Setup Alat Ekonomis</li>
+                            <li>Penulisan Naskah Live</li>
+                            <li>Tembus Algoritma Video</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 200.000</span>
+                        <a href="http://lynk.id/gocbd/vkz4zy28r5kj/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">09</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="Perencanaan Finansial Ads" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 9</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Fundamental Ads Shopee</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Aturan Main Penawaran Iklan</li>
+                            <li>Kriteria Produk Iklan</li>
+                            <li>Kalkulasi Budget Tepat</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 300.000</span>
+                        <a href="http://lynk.id/gocbd/v4qkqyw56ewq/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+                <div class="module-card bg-zinc-950/80 border border-zinc-800 rounded-[18px] p-3.5 sm:p-5 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -right-3 -bottom-3 text-[70px] font-black text-shopee/[0.03] pointer-events-none select-none z-0 group-hover:text-shopee/[0.08] transition-colors duration-500">10</div>
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400" alt="Dashboard Ads Lanjut" class="w-full h-20 sm:h-28 object-cover rounded-[10px] sm:rounded-[12px] mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <span class="text-[9px] font-bold text-shopee uppercase tracking-widest">Modul 10</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-3 sm:h-4 object-contain">
+                        </div>
+                        <h4 class="text-[12px] sm:text-[14px] font-bold text-white leading-tight mb-2">Optimasi Iklan Tingkat Lanjut</h4>
+                        <ul class="text-[10px] sm:text-[11px] text-zinc-400 space-y-1.5 mb-3 list-disc list-outside ml-3">
+                            <li>Ekskavasi Data Konversi</li>
+                            <li>Taktik Evaluasi Iklan</li>
+                            <li>Tingkatkan Kampanye Sukses</li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 mt-auto pt-3 border-t border-zinc-800/50">
+                        <span class="text-[14px] sm:text-[16px] font-black text-white block mb-2.5">Rp 300.000</span>
+                        <a href="http://lynk.id/gocbd/kjl5ln75nj47/checkout" target="_blank" class="block w-full text-center py-2.5 bg-zinc-900 text-white hover:bg-shopee hover:text-white border border-zinc-800 hover:border-shopee rounded-[10px] text-[10px] font-bold transition-all uppercase tracking-widest">Pilih Modul</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function toggleDesc() {
+            const content = document.getElementById('desc-content');
+            const btn = document.getElementById('btn-show-more');
+            
+            if (content.classList.contains('line-clamp-3')) {
+                content.classList.remove('line-clamp-3');
+                btn.innerHTML = `Tampilkan Lebih Sedikit <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>`;
+            } else {
+                content.classList.add('line-clamp-3');
+                btn.innerHTML = `Baca Selengkapnya <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7-7-7-7"></path></svg>`;
+            }
+        }
+    </script>
+</body>
+</html>
